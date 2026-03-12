@@ -19,7 +19,7 @@ export default function CreatePost() {
   }
 
   return (
-    <div>
+    <div className="crud-panel-wrapper">
       <h2>Create Post</h2>
       <input
         value={newPost.title}

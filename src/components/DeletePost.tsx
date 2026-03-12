@@ -11,7 +11,7 @@ export default function DeletePost() {
   }
 
   return (
-    <div>
+    <div className="crud-panel-wrapper">
       <h2>Delete Post</h2>
       <input
         type="number"

@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing:border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,9 +29,14 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+}
+
+main {
+  padding: 0 5%;
+  width:100%;
 }
 
 h1 {
@@ -64,5 +73,29 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+input {
+  margin-right:15px;
+  padding:5px 8px;
+}
+
+.crud-panel-wrapper {
+  padding:25px;
+  background:rgba(255,255,255,0.05);
+  border-radius:12px;
+  margin-bottom:25px;
+}
+
+.crud-panel-wrapper h2 {
+  margin-top:0;
+  padding-top:0;
+}
+
+@media (max-width: 768px) {
+  input {
+    width:100%;
+    margin-bottom:20px;
   }
 }

@@ -18,7 +18,7 @@ export default function UpdatePost() {
   }
 
   return (
-    <div>
+    <div className="crud-panel-wrapper">
       <h2>Update Post</h2>
       <input
         type="number"
