@@ -1,29 +1,19 @@
-import { useFetchPosts } from "./hooks/useFetchPosts"
-import CreatePost from "./components/CreatePost"
-import UpdatePost from "./components/UpdatePost"
-import DeletePost from "./components/DeletePost"
+import { Routes, Route } from "react-router-dom"
+import Layout from "./components/Layout"
+import Home from "./pages/Home"
+import Posts from "./pages/PostsPage"
+import PostPage from "./pages/PostPage"
 
 export default function App() {
-  const {data: posts, isLoading, isError} = useFetchPosts()
-
-  if (isLoading) return <h2>Loading...</h2>
-  if (isError) return <h2>Something went wrong.</h2>
 
   return <>
-    <main>
-      <h1>TanStack Query TypeScript</h1>
-
-      <CreatePost />
-
-      <UpdatePost />
-
-      <DeletePost />
-
-      <ul>
-        {posts?.map((post) => {
-          return <li key={post.id}>{post.id} {post.title}</li>
-        })}
-      </ul>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />}/>
+        <Route path="posts" element={<Posts />} />
+        <Route path="posts/:id" element={<PostPage />} />
+        <Route path="*" element={<h2>404 - Page not found</h2>} />
+      </Route>
+    </Routes>
   </>
 }
