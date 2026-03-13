@@ -90,4 +90,5 @@ npm run dev
 - TypeScript
 - TanStack Query v5
 - React Router v6
+- react-error-boundary
 - Vite
